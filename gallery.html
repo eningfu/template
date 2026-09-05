@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gallery</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <link href="/neocities-sodascribbles/universal.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="/neocities-sodascribbles/gallerystyle.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barrio&family=Cherry+Bomb+One&family=Darumadrop+One&family=DotGothic16&family=Jersey+10&family=Jersey+15&family=Londrina+Sketch&family=Shizuru&family=Silkscreen&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header
+      onclick="location.href = 'https://[name].neocities.org/'"
+    ></header>
+    <div class="nav">
+      <button onclick="location.href = 'index.html'">home</button>
+      <button onclick="location.href = 'gallery.html'" class="active">
+        GALLERY
+      </button>
+    </div>
+    <div class="three-column-layout">
+      <div class="column middle">
+        <div class="content-wrap">
+          <div class="top">
+            <div class="filter-buttons">
+              <button id="all" onclick="filterGallery('all')">all</button>
+              <button id="original" onclick="filterGallery('original')">
+                original
+              </button>
+              <button id="fanart" onclick="filterGallery('fanart')">
+                fanart
+              </button>
+            </div>
+          </div>
+          <div class="gallery">
+            [images here]
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function filterGallery(category) {
+        const items = document.querySelectorAll(".gallery-item");
+        const buttons = document.querySelectorAll(".filter-buttons button");
+        buttons.forEach((btn) => btn.classList.remove("current"));
+        document.getElementById(category).classList.add("current");
+        items.forEach((item) => {
+          if (category === "all") {
+            item.classList.remove("hidden");
+          } else {
+            item.classList.toggle("hidden", !item.classList.contains(category));
+          }
+        });
+      }
+      window.addEventListener("DOMContentLoaded", () => {
+        filterGallery("all");
+      });
+    </script>
+  </body>
+</html>

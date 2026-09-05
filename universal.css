@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  background-color: #74C2FF;
+  /* background-image: url(img/bgalt.png); */
+  color: black;
+  min-height: 100vh;
+  font-family: 'VT323', monospace ;
+  margin: 20px 250px 0;
+  position: relative;
+  z-index: 0;
+}
+
+header {
+  background-image: url('img/header.png');
+  background-size: cover;
+  background-position: center;
+  height: 170px;
+  border-bottom: none;
+  transition: height 0.3s ease;
+  border: 10px solid white;
+  border-radius: 20px 20px 0px 0px;
+}
+
+header:hover {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #74C2FF;
+  border: 2px solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(108, 182, 255);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 0.5em;
+  background-color: white;
+  box-shadow: 0 0 15px #fff5;
+}
+
+.nav button {
+  background: linear-gradient(180deg, #fff, #74C2FF);
+  color: black;
+  padding: 5px 15px;
+  border: 2px solid #74C2FF;
+  
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.nav button:hover {
+  background: linear-gradient(180deg, #ccf, #fff);
+  box-shadow: none;
+  box-shadow: inset 0 2px 3px #fff9, 0 2px 4px #0002;
+  cursor: pointer;
+}
+
+.nav button.active {
+  color: blue;
+}
+
+.external {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.link {
+  color: black;
+  border: 2px solid #74C2FF;
+  background-color: white;
+  padding: 5px;
+}
+
+.link:hover {
+  color: white;
+  background-color: deeppink;
+  text-decoration: none;
+}
+
+.sign {
+  width: 100px;
+  margin: auto;
+  display: flex;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.sign:hover {
+  transform: scale(1.1);
+}
+
+.three-column-layout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  color: black;
+  /* margin-top: 10px; */
+
+  background-color: white;
+  padding: 10px;
+}
+
+.top {
+  background: linear-gradient(180deg, #fff, #74C2FF);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #74C2FF;
+  border-bottom: none;
+  color: black;
+}
+
+.top h1 {
+  margin: 6px 10px;
+  font-size: 20px;
+}
+
+h1, p, a {
+  text-align: center;
+  font-weight: lighter;
+}
+
+a {
+  color: black;           
+  text-decoration: none;   
+  cursor: pointer; 
+}
+
+a:hover {
+  text-decoration: underline;       
+}
+
+.footer-content {
+  margin-top: 10px;;
+  text-align: center;
+}
+
+.footer-content a {
+  color: white;
+  text-shadow: 0px 0px 5px #c9e5ff;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: blue;
+  color: white;
+  padding: 5px 0;
+}
+
+.marquee-inner {
+  display: inline-flex;
+  width: max-content;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-inner span {
+  padding-right: 5px;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* mobile wip */
+@media (max-width: 1200px) {
+  body {
+    margin: 20px 150px 0;
+  }
+
+  header {
+    border-radius: 0px;
+  }
+  
+  /*
+  .three-column-layout {
+    margin: 0px;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .left, .right, .middle {
+    width: 100%;
+    flex: 1;
+  }
+
+  .middle {
+    order: 2;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 3;
+  } */
+
+  header {
+    height: 150px;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    margin: 0;
+  }
+
+  header {
+    margin: 10px 10px 0 10px;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .nav {
+    margin: 0 10px;
+  }
+
+  .three-column-layout {
+    margin: 0px;
+    flex-direction: column;
+    margin: 0 10px 10px 10px;
+  }
+
+  .left, .right, .middle {
+    width: 100%;
+    flex: 1;
+  }
+
+  .middle {
+    order: 2;
+  }
+
+  .left {
+    order: 1;
+  }
+
+  .right {
+    order: 3;
+  }
+
+  header {
+    height: 130px;
+  }
+}
